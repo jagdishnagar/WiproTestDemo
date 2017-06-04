@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         try{
             URL url = new URL(strUrl);
 
-            // Creating an http connection to communicate with url
+            // Creating an https connection to communicate with url
             urlConnection = (HttpURLConnection) url.openConnection();
 
             // Connecting to url
