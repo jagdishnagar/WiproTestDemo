@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">WiproTestDemo</string>
+    <string name="str_atv_places">Please enter search location</string>
 </resources>

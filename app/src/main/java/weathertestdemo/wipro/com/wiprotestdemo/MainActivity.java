@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
             String data = "";
 
             // Obtain browser key from https://code.google.com/apis/console
-            String key = "key=AIzaSyBe0QnrOwFYIBsMQ29V-KwqvJXLaSQmlcw";
+            String key = "key=AIzaSyC1gCWHBBKE2VTCCkw4reDERlYzgoA7ja8";
 
             String input="";
 
