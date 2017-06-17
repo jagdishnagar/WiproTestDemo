@@ -1,10 +1,10 @@
 package weathertestdemo.wipro.com.wiprotestdemo;
 
 /**
- * Created by jagdishnagar on 5/28/2017.
+ * Created by jagdishnagar on 6/17/2017.
  */
 
-public class WeatherForecast {
+public class WeatherPojo {
 
     public String mTime , mMaxTemperature , mMinTemperature ;
 
@@ -33,4 +33,5 @@ public class WeatherForecast {
         this.mTime = mTime;
 
     }
+
 }

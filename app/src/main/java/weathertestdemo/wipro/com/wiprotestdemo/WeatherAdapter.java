@@ -17,7 +17,7 @@ import java.util.List;
 
 public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.MyViewHolder> {
 
-    private List<WeatherForecast> mWeatherDataList;
+    private List<WeatherPojo> mWeatherDataList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView mTime, mTextViewMinTemperature ,mTextViewMaxTemperature,mTextViewTime ,mTextviewDayMonth ,mTextViewYear;
@@ -34,7 +34,7 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.MyViewHo
     }
 
 
-    public WeatherAdapter(List<WeatherForecast> mWeatherDataList) {
+    public WeatherAdapter(List<WeatherPojo> mWeatherDataList) {
         this.mWeatherDataList = mWeatherDataList;
     }
 
@@ -48,7 +48,7 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-         WeatherForecast mwaether = mWeatherDataList.get(position);
+        WeatherPojo mwaether = mWeatherDataList.get(position);
          String mDateString = mwaether.getmTime();
          String [] mDaySplit = mDateString.split(" ");
          String [] mDate = mDaySplit[0].toString().split("-");
@@ -69,7 +69,7 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.MyViewHo
                  holder.mTextViewTime.setText("" + (mCalender.get(Calendar.HOUR)) + " PM");
              }
          }
-         holder.mTextViewMinTemperature.setText("Temp  "+""+((((Float.parseFloat(mwaether.getmMinTemperature()))-273.15))));
+         holder.mTextViewMinTemperature.setText("Temp "+""+((((Float.parseFloat(mwaether.getmMinTemperature()))-273.15))));
          holder.mTextViewMaxTemperature.setText("-"+((((Float.parseFloat(mwaether.getmMaxTemperature()))-273.15))));
          holder.mTextviewDayMonth.setText(mCalender.get(Calendar.DAY_OF_MONTH)+" "+new SimpleDateFormat("MMM").format(mCalender.getTime()));
          holder.mTextViewYear.setText(""+mCalender.get(Calendar.YEAR));
