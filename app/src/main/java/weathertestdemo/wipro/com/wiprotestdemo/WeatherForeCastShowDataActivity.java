@@ -38,21 +38,20 @@ public class WeatherForeCastShowDataActivity extends AppCompatActivity {
           super.onCreate(savedInstanceState);
           setContentView(R.layout.activty_weather_forecast);
           
-          mdialog = new ProgressDialog(WeatherForeCastShowDataActivity.this);
-          mdialog.setMessage("please wait....");
-          mdialog.show();
 
           recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
           mWeatherforecastList = new ArrayList<WeatherPojo>();
 
+           mdialog = new ProgressDialog(WeatherForeCastShowDataActivity.this);
+           mdialog.setMessage("please wait....");
+           mdialog.show();
 
+           // NetWork Connection Check
+           if(ConnectionCheck.Check(this)) {
+              RequestQueue queue = Volley.newRequestQueue(this);
+              String url = Util.URL_BASE+"Bangalore,india"+"&mode=Json&appid=1614c2f62c53acdf7943cc4015737357";
+              // Request a string response from the provided URL.
 
-          RequestQueue queue = Volley.newRequestQueue(this);
-          String url = Util.URL_BASE+"Bangalore,india"+"&mode=Json&appid=1614c2f62c53acdf7943cc4015737357";
-          // Request a string response from the provided URL.
-
-
-          if(ConnectionCheck.Check(this)) {
               StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                       new Response.Listener<String>() {
                           @Override
